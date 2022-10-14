@@ -86,23 +86,7 @@ function makePageForEpisodes(episodeList) {
       episode.number
     )} - ${episode.name}`;
     selectMovies.appendChild(selectOption);
-////////////////////////////////////
-    //  selectOption.addEventListener("change", addMe);
-    //   let chosen = [];
-
-    //  function changeMe(e) {
-    //    selectOption.removeEventListener("mouseup", changeMe);
-    //    selectOption.dispatchEvent(new Event("change"));
-    //  }
-
-    //  function addMe(e) {
-    //    chosen.push(e.target.options[e.target.selectedIndex].value);
-    //    console.log(chosen);
-    //  }
-    
-   
-    /////////////////////////////////////////////
-    //
+ 
     const episodeContainer = document.createElement("div");
     episodeContainer.className = "episode-container";
     rootElem.appendChild(episodeContainer);

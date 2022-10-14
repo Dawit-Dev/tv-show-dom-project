@@ -32,6 +32,18 @@ header .hide {
   display: flex;
   align-items: center;
 } */
+#episodes-home-btn {
+   width: 200px;
+  height: 35px;
+  border-radius: 7px;
+  padding-left: 15px;
+  background-color: transparent;
+  border: 2px solid #22254b;
+  color: white;
+  font-size: 20px;
+  /* transform: translateY(5px); */
+  box-shadow: inset 0px 10px 20px 2px lightgray;
+}
 .select-movies {
   width: 300px;
   height: 35px;
