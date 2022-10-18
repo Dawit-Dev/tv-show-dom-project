@@ -12,9 +12,15 @@
   <body>
     <header class="header-container">
       <button id="episodes-home-btn" class="hide">View All Episodes</button>
+       <select name="shows" id="shows">
+        <option value="show" class="list-shows">Select Shows</option>
+       </select>
     </header>
     <div id="root"></div>
 
+
+    <!-- loading shows.js in your index.html and using the provided function: getAllShows() -->
+    <script src="shows.js"></script>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
     <script src="script/episodes.js"></script>
 
