@@ -1,8 +1,17 @@
 //You can edit ALL of the code here
-const allEpisodes = getAllEpisodes();
+// const allEpisodes = getAllEpisodes();
+let allEpisodes;
 
 function setup() {
-  makePageForEpisodes(allEpisodes);
+  //Retrieve the JSON
+  fetch("https://api.tvmaze.com/shows/82/episodes")
+    // Get the response and extract the JSON
+    .then((response) => response.json())
+    .then((episodes) => {
+      allEpisodes = episodes;
+      makePageForEpisodes(allEpisodes);
+    })
+    .catch((error) => console.log(error));
 }
 
 const rootElem = document.getElementById("root");
