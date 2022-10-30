@@ -7,18 +7,33 @@
     <link href="styles/style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
-   </head>
+  </head>
 
   <body>
-    <header class="header-container">
-      <button id="episodes-home-btn" class="hide">View All Episodes</button>
-       <select name="shows" id="shows">
-        <option value="show" class="list-shows">Select Shows</option>
-       </select>
-    </header>
-    <div id="root"></div>
+    <div class="nav-bar">
+    <select name="shows" id="show-options">
+      <option value="-1">Select Show</option>
+    </select>
+    <select name="episode" id="episodeOptions">
+      <option value="epi">Select episode</option>
+    </select>
+    <div>
+      <input id="search-input" type="text" placeholder=" Search...." name="search" />
+      <p id="episode-count" class="episode-count hide"></p>
+    </div>
+    <button class="btn"><i class="fa fa-home"></i> Home</button>
+    <!-- <button id="episodes-home-btn" class="hide">View All Shows</button> -->
+  </div>
 
+  <div id="root" class="show-container"></div>
+ <footer class="footer">
+      <h2>The data has (originally) come from <a href="https://www.tvmaze.com/">TVMaze.com</a></h2>
+      
+    </footer>
+  <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
+  <!-- <script src="episodes.js"></script> -->
 
+  <!-- Loads YOUR javascript code -->
     <!-- loading shows.js in your index.html and using the provided function: getAllShows() -->
     <script src="shows.js"></script>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
