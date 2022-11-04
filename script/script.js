@@ -3,11 +3,12 @@ const selectEl = document.getElementById("episodeOptions");
 const rootElem = document.getElementById("root");
 const homeBtn = document.querySelector(".btn ");
 
+let btns;
 let allEpisodes;
 let allShows;
 let showId;
-// let showTitle;
 
+// let showTitle;
 function setup() {
   fetch("https://api.tvmaze.com/shows")
     .then((response) => response.json())
@@ -23,6 +24,14 @@ function accessingAllshows() {
   showTitle = document.querySelectorAll(".show-container");
   showTitle.forEach((show) => {
     show.addEventListener("click", (e) => getShowById(e));
+  });
+  btns = document.querySelectorAll(".read-more");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      let nextSibling = btn.nextElementSibling;
+      nextSibling.style.display = "inline";
+    });
   });
 }
 
@@ -61,21 +70,22 @@ function makePageForShows(showList) {
 
     // creating episodes summary
     const showSummary = document.createElement("p");
+    const summaryText = show.summary.replace("<p>", "").replace("</p>", "");
     showSummary.className = "show-summary";
-    showSummary.innerHTML = show.summary;
+    showSummary.innerHTML = summaryText.substring(0, 80);
     showContainer.appendChild(showSummary);
 
+    const spanSummary = document.createElement("span");
+    spanSummary.className = "span-summary";
+    spanSummary.innerHTML = summaryText.substring(80, summaryText.length);
+
     const buttons = document.createElement("button");
-    buttons.className = "read-more onclick='readMore(this)'";
+    buttons.className = "read-more";
     buttons.innerHTML = "Read more...";
-    showSummary.appendChild(buttons);
+    showSummary.append(buttons, spanSummary);
   });
 }
-//  const episodesButton = document.getElementById("episodes-home-btn");
-// episodesButton.addEventListener("click", (e) => {
-//   window.location.reload();
-//   episodesButton.classList.add("hide");
-// });
+ 
 // sorting show alphabetically
 function selectShowsList(showsList) {
   showsList.sort((a, b) => {
@@ -118,6 +128,15 @@ searchInputShow.addEventListener("keyup", (e) => {
 function getEpisodes() {
   makePageForEpisodes(allEpisodes);
   optionalEpisode(allEpisodes);
+
+  btns = document.querySelectorAll(".read-more");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      let nextSibling = btn.nextElementSibling;
+      nextSibling.style.display = "inline";
+    });
+  });
 }
 
 // creating pages for episodes
@@ -145,14 +164,19 @@ function makePageForEpisodes(episodeList) {
     episodeContainer.appendChild(episodeImage);
     // creating episodes summary
     const episodeSummary = document.createElement("p");
+    const summaryText = episode.summary.replace("<p>", "").replace("</p>", "");
     episodeSummary.className = "episode-summary";
-    episodeSummary.innerHTML = episode.summary;
+    episodeSummary.innerHTML = summaryText.substring(0, 80);
     episodeContainer.appendChild(episodeSummary);
 
+    const spanSummary = document.createElement("span");
+    spanSummary.className = "span-summary";
+    spanSummary.innerHTML = summaryText.substring(80, summaryText.length);
+
     const buttons = document.createElement("button");
-    buttons.className = "read-more onclick='readMore(this)'";
+    buttons.className = "read-more";
     buttons.innerHTML = "Read more...";
-    episodeContainer.appendChild(buttons);
+    episodeSummary.append(buttons, spanSummary);
   });
 }
 
@@ -212,6 +236,14 @@ function showEpisode(e, episodeList) {
     });
     makePageForEpisodes([matchedEpisode]);
   }
+  btns = document.querySelectorAll(".read-more");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      let nextSibling = btn.nextElementSibling;
+      nextSibling.style.display = "inline";
+    });
+  });
 }
 function getShowById(e) {
   if (e.target.value) {
