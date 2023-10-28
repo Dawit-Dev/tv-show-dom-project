@@ -1,8 +1,9 @@
+html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #22254b;
+  background-color: #68829E;
 }
 
 .nav-bar {
@@ -11,23 +12,10 @@ body {
   width: 100%;
   height: 70px;
   background: #373b69;
-  border: 2px solid #22254b;
-  box-shadow: 0px 4px 8px lightgray;
+  background-color: #505160;
   padding: 10px;
 
-  /* /* padding-left: 20px;
-  margin: 20px 0;
-
-    width: 100%;
-  height: 100px;
-  background: #373b69;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border: 2px solid #22254b;
-  box-shadow: 0px 4px 8px lightgray;
-  padding: 10px;
-  /* margin-bottom: 5px; */
+  
 }
 
 #episodeOptions,
@@ -35,30 +23,20 @@ body {
   width: 320px;
   height: 45px;
   border-radius: 10px;
-  /* margin-top: 10px; */
   margin-left: 10px;
   background-color: transparent;
-  border: 2px solid #22254b;
+  border: 2px solid #67687C;
   color: white;
   font-size: 20px;
 }
-/* #show-options{
-    width: 320px;
-  height: 45px;
-  border-radius: 10px;
-  margin-top: 40px;
-background-color: transparent;
-  border: 2px solid #22254b;
-  color: white;
-  font-size: 20px;
-} */
+
 #episodeOptions option,
 #show-options option {
   background: #373b69;
 }
 
 .btn {
-  background-color: #373b69;
+  background-color: #6f2232;
   border: 2px solid #22254b;
   color: white;
   font-size: 20px;
@@ -67,7 +45,7 @@ background-color: transparent;
   cursor: pointer;
   height: 50px;
   border-radius: 10px;
-  margin-left: 10px;
+  margin-right: 2rem;
 }
 
 /* Darker background on mouse-over */
@@ -81,8 +59,8 @@ background-color: transparent;
   outline: none;
   border-radius: 20px;
   padding-left: 15px;
-  background-color: transparent;
-  border: 2px solid #22254b;
+  background-color: white;
+  border: 2px solid #67687C;
   color: white;
   font-size: 20px;
 }
@@ -104,78 +82,74 @@ background-color: transparent;
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
   margin: auto;
-  gap: 1.5rem;
+  gap: 2rem;
   cursor: pointer;
+  margin-top: 2rem;
 }
 .show-container {
-  background-color: #373b69;
-  box-shadow: 0 4px 5px;
+  background-color: #AEBD38;
+  background-color: #9E8468;
+  background-color: #505160;
   width: 100%;
   text-align: center;
-  border-radius: 7px;
+  transition: transform 0.2s;
 }
-/* .show-container {
-  display: flex;
-  flex-direction: column;
-  margin: 1.2em;
-  background-color: var(--light-grey);
-  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.4);
-} */
+
 
 .show-container:hover,
 .show-name:hover {
-  padding: 2rem;
-  /* box-shadow: 10px 10px 5px lightblue inset; */
-  /* box-shadow: 0px 5px 10px 0px white;  */
-  transform: translateY(5px);
+  
+  transform: scale(1.2);
   box-shadow: inset 0px 10px 20px 2px lightgray;
   border-radius: 7px;
 }
 .show-name {
-  border: 2px solid #22254b;
-  box-shadow: 0 4px 5px #22254b;
-  padding: 1.3rem 0.5rem;
+  
+  background-color: #1A1A1D;
+  padding: 1.3rem 0;
   margin-top: 0;
-  /* border-radius: 7px; */
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-
-  font-size: 1.5rem;
+  margin-bottom: 0;
+ 
+  font-size: 1.75rem;
   color: white;
   cursor: pointer;
 }
 
 .show-image {
-  box-shadow: 0 4px 10px;
-  border-radius: 7px;
+ 
+  width: 100%;
 }
 .show-summary {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   text-align: left;
   color: white;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .span-summary {
   display: none;
 }
 
 .read-more {
-  width: 100px;
-  height: 25px;
+   
+  font-size: 1.2rem;
+
   border-radius: 7px;
-  padding-left: 15px;
-  background-color: transparent;
-  border: 2px solid #22254b;
-  color: black;
-  font-size: 0.8rem;
-  /* transform: translateY(5px); */
-  box-shadow: inset 0px 10px 20px 2px lightgray;
+  padding: 10px 15px;
+  background-color: #c3073f;
+  
+  border: none;
+  color: white;
+  
   margin-left: 5px;
 }
 .list-name {
   border-bottom: 2px solid #22254b;
-  /* box-shadow: 0 4px 5px #22254b; */
+  border-bottom: 2px solid red;
   margin-top: 0;
-  padding-left: 50px;
+  margin-bottom: 0;
+  padding-bottom: 8px;
   text-align: left;
   color: white;
 }
@@ -205,7 +179,6 @@ background-color: transparent;
   box-shadow: 0 4px 5px #22254b;
   padding: 1.3rem 0.5rem;
   margin-top: 0;
-  /* border-radius: 7px; */
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 
