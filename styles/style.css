@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #68829E;
+  background-color: #68829e;
 }
 
 .nav-bar {
@@ -14,8 +14,6 @@ body {
   background: #373b69;
   background-color: #505160;
   padding: 10px;
-
-  
 }
 
 #episodeOptions,
@@ -25,7 +23,7 @@ body {
   border-radius: 10px;
   margin-left: 10px;
   background-color: transparent;
-  border: 2px solid #67687C;
+  border: 2px solid #67687c;
   color: white;
   font-size: 20px;
 }
@@ -60,7 +58,7 @@ body {
   border-radius: 20px;
   padding-left: 15px;
   background-color: white;
-  border: 2px solid #67687C;
+  border: 2px solid #67687c;
   color: white;
   font-size: 20px;
 }
@@ -87,36 +85,36 @@ body {
   margin-top: 2rem;
 }
 .show-container {
-  background-color: #AEBD38;
-  background-color: #9E8468;
+  background-color: #aebd38;
+  background-color: #9e8468;
   background-color: #505160;
   width: 100%;
   text-align: center;
   transition: transform 0.2s;
 }
 
-
-.show-container:hover,
-.show-name:hover {
-  
+.show-container:hover {
   transform: scale(1.2);
   box-shadow: inset 0px 10px 20px 2px lightgray;
   border-radius: 7px;
 }
+
+.show-name:hover {
+  box-shadow: inset 0px 10px 20px 2px lightgray;
+  border-radius: 7px;
+}
+
 .show-name {
-  
-  background-color: #1A1A1D;
+  background-color: #1a1a1d;
   padding: 1.3rem 0;
+  font-size: 1.75rem;
   margin-top: 0;
   margin-bottom: 0;
- 
-  font-size: 1.75rem;
   color: white;
   cursor: pointer;
 }
 
 .show-image {
- 
   width: 100%;
 }
 .show-summary {
@@ -132,16 +130,15 @@ body {
 }
 
 .read-more {
-   
   font-size: 1.2rem;
 
   border-radius: 7px;
   padding: 10px 15px;
   background-color: #c3073f;
-  
+
   border: none;
   color: white;
-  
+
   margin-left: 5px;
 }
 .list-name {
@@ -155,43 +152,46 @@ body {
 }
 
 .episode-container {
-  background-color: #373b69;
-  box-shadow: 0 4px 5px;
+  background-color: #505160;
   width: 100%;
   text-align: center;
+}
+
+.episode-container:hover {
+  transform: scale(1.2);
+  box-shadow: inset 0px 10px 20px 2px lightgray;
   border-radius: 7px;
 }
 
-.episode-container:hover,
 .episode-name:hover {
-  padding: 2rem;
-  transform: translateY(5px);
   box-shadow: inset 0px 10px 20px 2px lightgray;
+  border-radius: 7px;
 }
 
 .episode-image {
-  box-shadow: 0 4px 10px;
-  border-radius: 7px;
+  width: 100%;
+  height: inherit;
 }
 
 .episode-name {
-  border: 2px solid #22254b;
-  box-shadow: 0 4px 5px #22254b;
-  padding: 1.3rem 0.5rem;
+  background-color: #1a1a1d;
+  padding: 1.3rem 0;
+  font-size: 1.75rem;
   margin-top: 0;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-
-  font-size: 1.5rem;
+  margin-bottom: 0;
   color: white;
   cursor: pointer;
 }
 
 .episode-summary {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   text-align: left;
   color: white;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
+
 .footer {
   text-align: center;
 }
@@ -217,15 +217,9 @@ body {
     grid-template-columns: repeat(1, 1fr);
     width: 60%;
     margin: auto;
-    /* gap: 1.5rem; */
-
   }
   .show-container:hover,
-.show-name:hover {
-  box-shadow: none;
-  /* border-radius: 7px; */
-}
-   
- 
- 
+  .show-name:hover {
+    box-shadow: none;
+  }
 }
