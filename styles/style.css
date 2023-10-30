@@ -129,7 +129,8 @@ body {
   display: none;
 }
 
-.read-more {
+.read-more,
+.read-less {
   font-size: 1.2rem;
 
   border-radius: 7px;

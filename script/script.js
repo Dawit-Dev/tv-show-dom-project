@@ -21,16 +21,32 @@ function setup() {
 function accessingAllshows() {
   makePageForShows(allShows);
   selectShowsList(allShows);
-  showTitle = document.querySelectorAll(".show-container");
-  showTitle.forEach((show) => {
+  showContainer = document.querySelectorAll(".show-container");
+  showContainer.forEach((show) => {
     show.addEventListener("click", (e) => getShowById(e));
   });
+  
   btns = document.querySelectorAll(".read-more");
   btns.forEach((btn) => {
     btn.addEventListener("click", () => {
       btn.style.display = "none";
       let nextSibling = btn.nextElementSibling;
       nextSibling.style.display = "inline";
+    });
+  });
+
+  const readLess = document.querySelectorAll(".read-less");
+  const spanSummary = document.querySelectorAll(".span-summary")
+
+  readLess.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      spanSummary.forEach(summary => {
+         summary.style.display = "none";
+      });
+      
+      btns.forEach(btn => {
+        btn.style.display = "inline"
+      })
     });
   });
 }
@@ -44,6 +60,7 @@ function makePageForShows(showList) {
     // creating div container
     const showContainer = document.createElement("div");
     showContainer.className = "show-container";
+    showContainer.id = show.id;
     rootElem.appendChild(showContainer);
     //  creating heading h3
     const showName = document.createElement("h3");
@@ -56,6 +73,7 @@ function makePageForShows(showList) {
     const showImage = document.createElement("img");
     showImage.className = "show-image";
     showImage.src = show.image.medium;
+    showImage.id = show.id;
     showContainer.appendChild(showImage);
 
     // creating credits of the show
@@ -78,14 +96,20 @@ function makePageForShows(showList) {
     const spanSummary = document.createElement("span");
     spanSummary.className = "span-summary";
     spanSummary.innerHTML = summaryText.substring(80, summaryText.length);
+    spanSummary.id = show.id;
 
     const buttons = document.createElement("button");
     buttons.className = "read-more";
     buttons.innerHTML = "Read more...";
     showSummary.append(buttons, spanSummary);
+
+    const readLessButton = document.createElement("button");
+    readLessButton.className = "read-less";
+    readLessButton.innerHTML = "Read Less";
+    spanSummary.appendChild(readLessButton)
   });
 }
- 
+
 // sorting show alphabetically
 function selectShowsList(showsList) {
   showsList.sort((a, b) => {
