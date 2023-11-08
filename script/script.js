@@ -14,6 +14,7 @@ function setup() {
     .then((response) => response.json())
     .then((data) => {
       allShows = data;
+      console.log(data.length)
       accessingAllshows(allShows);
     });
 }
@@ -129,6 +130,7 @@ function selectShowsList(showsList) {
 const searchInputShow = document.getElementById("search-input");
 searchInputShow.addEventListener("keyup", (e) => {
   const searchStringShow = e.target.value.toLowerCase();
+  console.log(searchStringShow)
   const filteredShow = allShows.filter((show) => {
     return show.name.toLowerCase().includes(searchStringShow);
     //  show.summary.toLowerCase().includes(searchStringShow)
@@ -144,7 +146,7 @@ searchInputShow.addEventListener("keyup", (e) => {
     showCount.classList.add("hide");
   }
   makePageForShows(filteredShow);
-  show.addEventListener("click", (e) => getShowById(e));
+  // show.addEventListener("click", (e) => getShowById(e));
 });
 
 // ........ episode creating section //
@@ -208,24 +210,27 @@ function makePageForEpisodes(episodeList) {
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toUpperCase();
-  const filteredEpi = allEpisodes.filter((episode) => {
-    return (
-      episode.name.toUpperCase().includes(searchString) ||
-      episode.summary.toUpperCase().includes(searchString)
-    );
-  });
-  while (rootElem.firstChild) {
-    rootElem.removeChild(rootElem.firstChild);
-  }
-  //  counting episodes
-  const episodeCount = document.getElementById("episode-count");
-  episodeCount.innerHTML = `Display ${filteredEpi.length}/${allEpisodes.length} episodes`;
-  episodeCount.classList.remove("hide");
-  if (e.target.value === "") {
-    episodeCount.classList.add("hide");
-  }
+  
+  if (allEpisodes) {
+    const filteredEpi = allEpisodes.filter((episode) => {
+      return (
+        episode.name.toUpperCase().includes(searchString) ||
+        episode.summary.toUpperCase().includes(searchString)
+      );
+    });
+    while (rootElem.firstChild) {
+      rootElem.removeChild(rootElem.firstChild);
+    }
+    //  counting episodes
+    const episodeCount = document.getElementById("episode-count");
+    episodeCount.innerHTML = `Display ${filteredEpi.length}/${allEpisodes.length} episodes`;
+    episodeCount.classList.remove("hide");
+    if (e.target.value === "") {
+      episodeCount.classList.add("hide");
+    }
 
-  makePageForEpisodes(filteredEpi);
+    makePageForEpisodes(filteredEpi);
+  }
 });
 
 //  select option dropdown

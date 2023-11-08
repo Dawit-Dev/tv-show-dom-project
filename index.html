@@ -6,34 +6,51 @@
     <title>TV Show Project | Dawit-Abraha (Dawit-Dev)</title>
     <link href="styles/style.css" rel="stylesheet" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
   </head>
 
   <body>
     <div class="nav-bar">
-    <select name="shows" id="show-options">
-      <option value="-1">Select Show</option>
-    </select>
-    <select name="episode" id="episodeOptions">
-      <option value="epi">Select episode</option>
-    </select>
-    <div>
-      <input id="search-input" type="text" placeholder=" Search...." name="search" />
+      <select name="shows" id="show-options">
+        <option value="-1">Select Show</option>
+      </select>
+      <select name="episode" id="episodeOptions">
+        <option value="epi">Select episode</option>
+      </select>
+      <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass fa-xlg icon"></i>
+        <input
+          class="search-bar"
+          id="search-input"
+          type="text"
+          placeholder=" Search...."
+          name="search"
+        />
+      </div>
       <p id="episode-count" class="episode-count hide"></p>
+
+      <button class="btn"><i class="fa fa-home"></i> Home</button>
+      <!-- <button id="episodes-home-btn" class="hide">View All Shows</button> -->
     </div>
-    <button class="btn"><i class="fa fa-home"></i> Home</button>
-    <!-- <button id="episodes-home-btn" class="hide">View All Shows</button> -->
-  </div>
 
-  <div id="root"></div>
- <footer class="footer">
-      <h2>The data has (originally) come from <a href="https://www.tvmaze.com/">TVMaze.com</a></h2>
-      
+    <div id="root"></div>
+    <footer class="footer">
+      <h2>
+        The data has (originally) come from
+        <a href="https://www.tvmaze.com/">TVMaze.com</a>
+      </h2>
     </footer>
-  <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-  <!-- <script src="episodes.js"></script> -->
+    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
+    <!-- <script src="episodes.js"></script> -->
 
-  <!-- Loads YOUR javascript code -->
+    <!-- Loads YOUR javascript code -->
     <!-- loading shows.js in your index.html and using the provided function: getAllShows() -->
     <script src="shows.js"></script>
     <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
