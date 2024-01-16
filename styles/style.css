@@ -1,0 +1,258 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #68829e;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background: #373b69;
+  background-color: #505160;
+  padding: 10px;
+}
+
+#episodeOptions,
+#show-options {
+  width: 320px;
+  height: 45px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: 2px solid #67687c;
+  color: white;
+  font-size: 20px;
+}
+
+#episodeOptions option,
+#show-options option {
+  background: #373b69;
+}
+
+.btn {
+  background-color: #6f2232;
+  border: 2px solid #22254b;
+  color: white;
+  font-size: 20px;
+  padding: 10px 26px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 2rem;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #22254b;
+}
+
+/* #search-input {
+  width: 300px;
+  height: 45px;
+  outline: none;
+  border-radius: 20px;
+  padding-left: 15px;
+  background-color: white;
+  border: 2px solid #67687c;
+  color: black;
+  font-size: 20px;
+} */
+input {
+  border: none !important;
+} 
+
+.search-container {
+  width: 40%;
+  border-radius: 7px;
+  /* padding: 0.75rem 0.25rem; */
+  background-color: white;
+  border: none;
+}
+
+.search-container i {
+  position: absolute;
+}
+
+.icon {
+  padding: 10px;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: rgb(37, 37, 39);
+}
+
+.search-bar {
+  padding: 10px 4px 10px 44px;
+	width: 100%;
+	font-size: 1.3rem;
+	/* border: 1px solid white; */
+	border-radius: 4px;
+	color: rgb(37, 37, 39);
+}
+
+.episode-count {
+  display: flex;
+  justify-content: flex-end;
+  margin-block: 10px;
+  margin-right: 40px;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 90%;
+  margin: auto;
+  gap: 2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.show-container {
+  background-color: #aebd38;
+  background-color: #9e8468;
+  background-color: #505160;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.show-container:hover {
+  transform: scale(1.2);
+  box-shadow: inset 0px 10px 20px 2px lightgray;
+  border-radius: 7px;
+}
+
+.show-name:hover {
+  box-shadow: inset 0px 10px 20px 2px lightgray;
+  border-radius: 7px;
+}
+
+.show-name {
+  background-color: #1a1a1d;
+  padding: 1.3rem 0;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.show-image {
+  width: 100%;
+}
+.show-summary {
+  padding: 1rem 2rem;
+  text-align: left;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.span-summary {
+  display: none;
+}
+
+.read-more,
+.read-less {
+  font-size: 1.2rem;
+
+  border-radius: 7px;
+  padding: 10px 15px;
+  background-color: #c3073f;
+
+  border: none;
+  color: white;
+
+  margin-left: 5px;
+}
+.list-name {
+  border-bottom: 2px solid #22254b;
+  border-bottom: 2px solid red;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 8px;
+  text-align: left;
+  color: white;
+}
+
+.episode-container {
+  background-color: #505160;
+  width: 100%;
+  text-align: center;
+}
+
+.episode-container:hover {
+  transform: scale(1.2);
+  box-shadow: inset 0px 10px 20px 2px lightgray;
+  border-radius: 7px;
+}
+
+.episode-name:hover {
+  box-shadow: inset 0px 10px 20px 2px lightgray;
+  border-radius: 7px;
+}
+
+.episode-image {
+  width: 100%;
+  height: inherit;
+}
+
+.episode-name {
+  background-color: #1a1a1d;
+  padding: 1.3rem 0;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.episode-summary {
+  padding: 1rem 2rem;
+  text-align: left;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer {
+  text-align: center;
+}
+.footer a {
+  color: rgb(255, 0, 34);
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    display: grid;
+    justify-content: space-around;
+    width: 100%;
+    height: 250px;
+    background: #373b69;
+    border: 2px solid #22254b;
+    box-shadow: 0px 4px 8px lightgray;
+    padding: 10px;
+  }
+
+  #root {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(1, 1fr);
+    width: 60%;
+    margin: auto;
+  }
+  .show-container:hover,
+  .show-name:hover {
+    box-shadow: none;
+  }
+}
